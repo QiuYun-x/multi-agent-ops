@@ -65,3 +65,6 @@ text
 在 main() 中修改 test_orders 模拟不同订单场景
 
 新增 Agent：创建 Agent 子类，注册消息处理器，挂载到 MessageBus 即可，无需改动已有 Agent
+
+📄 License
+MIT
