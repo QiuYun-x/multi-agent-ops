@@ -1,4 +1,4 @@
-﻿# 多Agent协同运营自动化系统
+# 多Agent协同运营自动化系统
 
 基于 **Python asyncio** 的去中心化多智能体协同系统，模拟电商订单处理全流程：  
 `订单接收 → 库存检查 → 发货 → 用户通知`，并内置系统监控 Agent。
@@ -27,7 +27,6 @@
 ↳ 库存充足 → DeliveryAgent (发货) → NotificationAgent + MonitorAgent
 ↳ 库存不足 → NotificationAgent (缺货通知)
 
-text
 
 - 一次订单处理最多跨越 **5 个 Agent、6 次消息交换**
 - 每个 Agent **独立异步运行、无共享状态**，天然支持并发处理
@@ -44,14 +43,13 @@ cd multi-agent-ops
 
 # 2. 运行
 python 多Agent协同系统.py
+```
 文件说明
-text
 .
 ├── 多Agent协同系统.py   # 主程序（含所有 Agent + 总线 + 示例）
 ├── README.md            # 本文件
 └── .gitignore
 运行示例
-text
 [OrderAgent] 收到新订单请求, 生成订单ID: 1000, 商品: 手机, 数量: 2
 [InventoryAgent] 检查库存: 手机 需要 2, 库存 5 -> 充足
 [DeliveryAgent] 订单 1000 已发货，物流单号: SF1234567
@@ -65,6 +63,3 @@ text
 在 main() 中修改 test_orders 模拟不同订单场景
 
 新增 Agent：创建 Agent 子类，注册消息处理器，挂载到 MessageBus 即可，无需改动已有 Agent
-
-License
-MIT
