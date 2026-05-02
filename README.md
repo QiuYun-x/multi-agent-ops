@@ -23,21 +23,18 @@
 | `MessageBus` | 消息总线，基于 `asyncio.Queue` 实现 Agent 间异步通信 |
 
 ## ⚡ 核心协作流（长链流程）
+
+```text
 外部事件 → OrderAgent → InventoryAgent (查库存)
-↳ 库存充足 → DeliveryAgent (发货) → NotificationAgent + MonitorAgent
-↳ 库存不足 → NotificationAgent (缺货通知)
-
-text
-
-- 一次订单处理最多跨越 **5 个 Agent、6 次消息交换**
-- 每个 Agent **独立异步运行、无共享状态**，天然支持并发处理
-- 流程分支完全由消息控制，并非写死的 if/else，易于扩展
-
-## 🚀 快速开始
-
-**环境要求**：Python 3.8+，无需任何第三方库。
-
-```bash
+                          ↳ 库存充足 → DeliveryAgent (发货) → NotificationAgent + MonitorAgent
+                          ↳ 库存不足 → NotificationAgent (缺货通知)
+一次订单处理最多跨越 5 个 Agent、6 次消息交换
+每个 Agent 独立异步运行、无共享状态，天然支持并发处理
+流程分支完全由消息控制，并非写死的 if/else，易于扩展
+🚀 快速开始
+环境要求：Python 3.8+，无需任何第三方库。
+bash
+运行
 # 1. 克隆仓库
 git clone https://github.com/QiuYun-x/multi-agent-ops.git
 cd multi-agent-ops
@@ -59,9 +56,14 @@ text
 [MonitorAgent] 系统事件记录: {'event': 'order_shipped', ...}
 🛠️ 自定义与扩展
 修改 InventoryAgent 中的 self.stock 调整初始库存
-
 如需真实扣减库存，打开 handle_check_inventory 方法中的 # self.stock[item] -= quantity 注释
-
 在 main() 中修改 test_orders 模拟不同订单场景
-
 新增 Agent：创建 Agent 子类，注册消息处理器，挂载到 MessageBus 即可，无需改动已有 Agent
+plaintext
+
+### 修复的核心语法问题（避坑指南）：
+1. **所有代码块严格闭合**：每个 ` ```语言` 开头后，必须有对应的 ` ``` ` 结尾（这是你上次全黑的根本原因）。
+2. **规范标题层级**：从 `#` 到 `##` 逐级使用，避免跳级。
+3. **流程图用代码块包裹**：防止特殊字符被Markdown解析器误判。
+4. **列表统一有序化**：“自定义与扩展”部分改为有序列表，操作指引更清晰。
+5. **关键变量加反引号**：如 `self.stock`，在文档中更突出代码语义。
