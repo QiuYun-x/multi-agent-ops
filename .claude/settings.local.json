@@ -1,0 +1,40 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" --connect-timeout 3 -x http://127.0.0.1:7890 https://github.com)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" --connect-timeout 3 -x http://127.0.0.1:7897 https://github.com)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" --connect-timeout 3 -x http://127.0.0.1:10809 https://github.com)",
+      "Bash(ping -n 1 github.com)",
+      "Bash(netstat -ano)",
+      "Bash(curl -v --connect-timeout 8 https://github.com)",
+      "Bash(curl -s --connect-timeout 5 http://127.0.0.1:9097/configs)",
+      "Bash(curl -s --connect-timeout 5 http://127.0.0.1:9090/configs)",
+      "Bash(curl -s -o /dev/null -w \"HTTP:%{http_code}\" --connect-timeout 5 --proxy http://127.0.0.1:7897 https://github.com)",
+      "Bash(curl -s -o /dev/null -w \"HTTPS:%{http_code}\" --connect-timeout 5 --proxy https://127.0.0.1:7897 https://github.com)",
+      "Bash(curl -s -o /dev/null -w \"SOCKS5:%{http_code}\" --connect-timeout 5 --socks5 127.0.0.1:7897 https://github.com)",
+      "Bash(curl -s -o /dev/null -w \"google:%{http_code}\" --connect-timeout 5 -x http://127.0.0.1:7897 https://www.google.com)",
+      "Bash(curl -s -o /dev/null -w \"baidu:%{http_code}\" --connect-timeout 5 -x http://127.0.0.1:7897 https://www.baidu.com)",
+      "Bash(curl -s -o /dev/null -w \"bing:%{http_code}\" --connect-timeout 5 -x http://127.0.0.1:7897 https://www.bing.com)",
+      "Bash(git config *)",
+      "Bash(\"C:/Program Files/GitHub CLI/gh.exe\" config set proxy http://127.0.0.1:7897)",
+      "Bash(\"C:/Program Files/GitHub CLI/gh.exe\" config set https_proxy http://127.0.0.1:7897)",
+      "Bash(export HTTPS_PROXY=http://127.0.0.1:7897)",
+      "Bash(export HTTP_PROXY=http://127.0.0.1:7897)",
+      "Bash(\"C:/Program Files/GitHub CLI/gh.exe\" auth status)",
+      "Bash(curl -k -s -o /dev/null -w \"%{http_code}\" --connect-timeout 10 -x http://127.0.0.1:7897 https://api.github.com)",
+      "Bash(curl -k -s -o /dev/null -w \"%{http_code}\" --connect-timeout 10 -x http://127.0.0.1:7897 https://github.com)",
+      "Bash(curl -k -s -o /dev/null -w \"%{http_code}\" --connect-timeout 10 --socks5 127.0.0.1:7897 https://github.com)",
+      "Bash(export HTTPS_PROXY=socks5://127.0.0.1:7897)",
+      "Bash(export HTTP_PROXY=socks5://127.0.0.1:7897)",
+      "Bash(\"C:/Program Files/GitHub CLI/gh.exe\" auth login --hostname github.com)",
+      "Bash(export ALL_PROXY=socks5://127.0.0.1:7897)",
+      "Bash(export all_proxy=socks5://127.0.0.1:7897)",
+      "Bash(curl *)",
+      "Bash(git add *)",
+      "Bash(git commit -m ' *)",
+      "Bash(git remote *)",
+      "Bash(git push *)",
+      "Bash(start *)"
+    ]
+  }
+}
