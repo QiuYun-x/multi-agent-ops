@@ -44,13 +44,9 @@ cd multi-agent-ops
 python 多Agent协同系统.py
 ```
 📂文件说明
-.
 ├── 多Agent协同系统.py   # 主程序（含所有 Agent + 总线 + 示例）
-
 ├── README.md            # 本文件
-
 └── .gitignore
-
 🧪 运行示例
 [OrderAgent] 收到新订单请求, 生成订单ID: 1000, 商品: 手机, 数量: 2
 [InventoryAgent] 检查库存: 手机 需要 2, 库存 5 -> 充足
