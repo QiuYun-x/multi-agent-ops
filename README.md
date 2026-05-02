@@ -42,7 +42,6 @@ cd multi-agent-ops
 
 # 2. 运行
 python 多Agent协同系统.py
-```
 .
 ├── 多Agent协同系统.py   # 主程序（含所有 Agent + 总线 + 示例）
 ├── README.md            # 本文件
@@ -52,6 +51,7 @@ python 多Agent协同系统.py
 [DeliveryAgent] 订单 1000 已发货，物流单号: SF1234567
 [NotificationAgent] >>> 发送用户通知: 订单 1000 - 已发货
 [MonitorAgent] 系统事件记录: {'event': 'order_shipped', ...}
+```
 🛠️ 自定义与扩展
 修改 InventoryAgent 中的 self.stock 调整初始库存
 
